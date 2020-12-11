@@ -5,14 +5,14 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : elisa
-Version  : 20.08.3
-Release  : 2
-URL      : https://download.kde.org/stable/release-service/20.08.3/src/elisa-20.08.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.08.3/src/elisa-20.08.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.08.3/src/elisa-20.08.3.tar.xz.sig
+Version  : 20.12.0
+Release  : 3
+URL      : https://download.kde.org/stable/release-service/20.12.0/src/elisa-20.12.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.12.0/src/elisa-20.12.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.12.0/src/elisa-20.12.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : BSD-3-Clause CC-BY-SA-4.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.1 LGPL-3.0
+License  : BSD-3-Clause CC-BY-SA-4.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.1 LGPL-3.0 MIT
 Requires: elisa-bin = %{version}-%{release}
 Requires: elisa-data = %{version}-%{release}
 Requires: elisa-lib = %{version}-%{release}
@@ -103,15 +103,15 @@ locales components for the elisa package.
 
 
 %prep
-%setup -q -n elisa-20.08.3
-cd %{_builddir}/elisa-20.08.3
+%setup -q -n elisa-20.12.0
+cd %{_builddir}/elisa-20.12.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1604592551
+export SOURCE_DATE_EPOCH=1607705716
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -127,18 +127,26 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1604592551
+export SOURCE_DATE_EPOCH=1607705716
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/elisa
-cp %{_builddir}/elisa-20.08.3/COPYING %{buildroot}/usr/share/package-licenses/elisa/f45ee1c765646813b442ca58de72e20a64a7ddba
-cp %{_builddir}/elisa-20.08.3/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/elisa/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/elisa-20.08.3/LICENSES/CC-BY-SA-4.0.txt %{buildroot}/usr/share/package-licenses/elisa/7b3e5f0e946c0b599b04a45deebb1aaed782070d
-cp %{_builddir}/elisa-20.08.3/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/elisa/8287b608d3fa40ef401339fd907ca1260c964123
-cp %{_builddir}/elisa-20.08.3/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/elisa/e712eadfab0d2357c0f50f599ef35ee0d87534cb
-cp %{_builddir}/elisa-20.08.3/LICENSES/GPL-3.0-or-later.txt %{buildroot}/usr/share/package-licenses/elisa/6091db0aead0d90182b93d3c0d09ba93d188f907
-cp %{_builddir}/elisa-20.08.3/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/elisa/3c3d7573e137d48253731c975ecf90d74cfa9efe
-cp %{_builddir}/elisa-20.08.3/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/elisa/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/elisa-20.08.3/LICENSES/LGPL-3.0-or-later.txt %{buildroot}/usr/share/package-licenses/elisa/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/elisa-20.12.0/COPYING %{buildroot}/usr/share/package-licenses/elisa/f45ee1c765646813b442ca58de72e20a64a7ddba
+cp %{_builddir}/elisa-20.12.0/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/elisa/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/elisa-20.12.0/LICENSES/CC-BY-SA-4.0.txt %{buildroot}/usr/share/package-licenses/elisa/7b3e5f0e946c0b599b04a45deebb1aaed782070d
+cp %{_builddir}/elisa-20.12.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/elisa/8287b608d3fa40ef401339fd907ca1260c964123
+cp %{_builddir}/elisa-20.12.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/elisa/e712eadfab0d2357c0f50f599ef35ee0d87534cb
+cp %{_builddir}/elisa-20.12.0/LICENSES/GPL-3.0-or-later.txt %{buildroot}/usr/share/package-licenses/elisa/6091db0aead0d90182b93d3c0d09ba93d188f907
+cp %{_builddir}/elisa-20.12.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/elisa/3c3d7573e137d48253731c975ecf90d74cfa9efe
+cp %{_builddir}/elisa-20.12.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/elisa/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/elisa-20.12.0/LICENSES/LGPL-3.0-or-later.txt %{buildroot}/usr/share/package-licenses/elisa/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/elisa-20.12.0/LICENSES/MIT.txt %{buildroot}/usr/share/package-licenses/elisa/a0193e3fccf86c17dc71e3f6c0ac0b535e06bea3
+cp %{_builddir}/elisa-20.12.0/autotests/data/music/cover.jpg.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-20.12.0/autotests/data/music/test.m4a.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-20.12.0/autotests/data/music/test.mp3.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-20.12.0/autotests/data/music/test.ogg.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-20.12.0/doc/index.docbook.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-20.12.0/src/elisa_core.kcfg.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-20.12.0/src/elisa_settings.kcfgc.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
 pushd clr-build
 %make_install
 popd
@@ -166,9 +174,31 @@ popd
 
 %files doc
 %defattr(0644,root,root,0755)
+/usr/share/doc/HTML/ca/elisa/index.cache.bz2
+/usr/share/doc/HTML/ca/elisa/index.docbook
+/usr/share/doc/HTML/de/elisa/index.cache.bz2
+/usr/share/doc/HTML/de/elisa/index.docbook
 /usr/share/doc/HTML/en/elisa/Screenshot_20180912_232200.png
 /usr/share/doc/HTML/en/elisa/index.cache.bz2
 /usr/share/doc/HTML/en/elisa/index.docbook
+/usr/share/doc/HTML/es/elisa/index.cache.bz2
+/usr/share/doc/HTML/es/elisa/index.docbook
+/usr/share/doc/HTML/id/elisa/index.cache.bz2
+/usr/share/doc/HTML/id/elisa/index.docbook
+/usr/share/doc/HTML/it/elisa/Screenshot_20180912_232200.png
+/usr/share/doc/HTML/it/elisa/index.cache.bz2
+/usr/share/doc/HTML/it/elisa/index.docbook
+/usr/share/doc/HTML/nl/elisa/index.cache.bz2
+/usr/share/doc/HTML/nl/elisa/index.docbook
+/usr/share/doc/HTML/pt_BR/elisa/index.cache.bz2
+/usr/share/doc/HTML/pt_BR/elisa/index.docbook
+/usr/share/doc/HTML/sv/elisa/index.cache.bz2
+/usr/share/doc/HTML/sv/elisa/index.docbook
+/usr/share/doc/HTML/uk/elisa/Screenshot_20180912_232200.png
+/usr/share/doc/HTML/uk/elisa/index.cache.bz2
+/usr/share/doc/HTML/uk/elisa/index.docbook
+/usr/share/doc/HTML/zh_CN/elisa/index.cache.bz2
+/usr/share/doc/HTML/zh_CN/elisa/index.docbook
 
 %files lib
 %defattr(-,root,root,-)
@@ -182,10 +212,12 @@ popd
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/elisa/3c3d7573e137d48253731c975ecf90d74cfa9efe
 /usr/share/package-licenses/elisa/6091db0aead0d90182b93d3c0d09ba93d188f907
+/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
 /usr/share/package-licenses/elisa/757b86330df80f81143d5916b3e92b4bcb1b1890
 /usr/share/package-licenses/elisa/7b3e5f0e946c0b599b04a45deebb1aaed782070d
 /usr/share/package-licenses/elisa/8287b608d3fa40ef401339fd907ca1260c964123
 /usr/share/package-licenses/elisa/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+/usr/share/package-licenses/elisa/a0193e3fccf86c17dc71e3f6c0ac0b535e06bea3
 /usr/share/package-licenses/elisa/e712eadfab0d2357c0f50f599ef35ee0d87534cb
 /usr/share/package-licenses/elisa/f45ee1c765646813b442ca58de72e20a64a7ddba
 
