@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : elisa
-Version  : 21.12.3
-Release  : 15
-URL      : https://download.kde.org/stable/release-service/21.12.3/src/elisa-21.12.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/21.12.3/src/elisa-21.12.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/21.12.3/src/elisa-21.12.3.tar.xz.sig
+Version  : 22.04.0
+Release  : 16
+URL      : https://download.kde.org/stable/release-service/22.04.0/src/elisa-22.04.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.04.0/src/elisa-22.04.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.04.0/src/elisa-22.04.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause CC0-1.0 GPL-3.0 LGPL-2.1 LGPL-3.0 MIT
@@ -102,15 +102,15 @@ locales components for the elisa package.
 
 
 %prep
-%setup -q -n elisa-21.12.3
-cd %{_builddir}/elisa-21.12.3
+%setup -q -n elisa-22.04.0
+cd %{_builddir}/elisa-22.04.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1646533983
+export SOURCE_DATE_EPOCH=1650668884
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -126,27 +126,27 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1646533983
+export SOURCE_DATE_EPOCH=1650668884
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/elisa
-cp %{_builddir}/elisa-21.12.3/CMakePresets.json.license %{buildroot}/usr/share/package-licenses/elisa/29fb05b49e12a380545499938c4879440bd8851e
-cp %{_builddir}/elisa-21.12.3/COPYING %{buildroot}/usr/share/package-licenses/elisa/f45ee1c765646813b442ca58de72e20a64a7ddba
-cp %{_builddir}/elisa-21.12.3/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/elisa/ea97eb88ae53ec41e26f8542176ab986d7bc943a
-cp %{_builddir}/elisa-21.12.3/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/elisa/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/elisa-21.12.3/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/elisa/8287b608d3fa40ef401339fd907ca1260c964123
-cp %{_builddir}/elisa-21.12.3/LICENSES/GPL-3.0-or-later.txt %{buildroot}/usr/share/package-licenses/elisa/6091db0aead0d90182b93d3c0d09ba93d188f907
-cp %{_builddir}/elisa-21.12.3/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/elisa/3c3d7573e137d48253731c975ecf90d74cfa9efe
-cp %{_builddir}/elisa-21.12.3/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/elisa/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/elisa-21.12.3/LICENSES/LGPL-3.0-or-later.txt %{buildroot}/usr/share/package-licenses/elisa/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/elisa-21.12.3/LICENSES/MIT.txt %{buildroot}/usr/share/package-licenses/elisa/a0193e3fccf86c17dc71e3f6c0ac0b535e06bea3
-cp %{_builddir}/elisa-21.12.3/androidResources/vendor_logo.png.license %{buildroot}/usr/share/package-licenses/elisa/8923567b21de97e095e24a987a9c28986a02324c
-cp %{_builddir}/elisa-21.12.3/autotests/data/music/cover.jpg.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
-cp %{_builddir}/elisa-21.12.3/autotests/data/music/test.m4a.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
-cp %{_builddir}/elisa-21.12.3/autotests/data/music/test.mp3.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
-cp %{_builddir}/elisa-21.12.3/autotests/data/music/test.ogg.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
-cp %{_builddir}/elisa-21.12.3/doc/index.docbook.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
-cp %{_builddir}/elisa-21.12.3/src/elisa_core.kcfg.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
-cp %{_builddir}/elisa-21.12.3/src/elisa_settings.kcfgc.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-22.04.0/CMakePresets.json.license %{buildroot}/usr/share/package-licenses/elisa/29fb05b49e12a380545499938c4879440bd8851e
+cp %{_builddir}/elisa-22.04.0/COPYING %{buildroot}/usr/share/package-licenses/elisa/f45ee1c765646813b442ca58de72e20a64a7ddba
+cp %{_builddir}/elisa-22.04.0/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/elisa/ea97eb88ae53ec41e26f8542176ab986d7bc943a
+cp %{_builddir}/elisa-22.04.0/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/elisa/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/elisa-22.04.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/elisa/8287b608d3fa40ef401339fd907ca1260c964123
+cp %{_builddir}/elisa-22.04.0/LICENSES/GPL-3.0-or-later.txt %{buildroot}/usr/share/package-licenses/elisa/6091db0aead0d90182b93d3c0d09ba93d188f907
+cp %{_builddir}/elisa-22.04.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/elisa/3c3d7573e137d48253731c975ecf90d74cfa9efe
+cp %{_builddir}/elisa-22.04.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/elisa/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/elisa-22.04.0/LICENSES/LGPL-3.0-or-later.txt %{buildroot}/usr/share/package-licenses/elisa/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/elisa-22.04.0/LICENSES/MIT.txt %{buildroot}/usr/share/package-licenses/elisa/a0193e3fccf86c17dc71e3f6c0ac0b535e06bea3
+cp %{_builddir}/elisa-22.04.0/androidResources/vendor_logo.png.license %{buildroot}/usr/share/package-licenses/elisa/8923567b21de97e095e24a987a9c28986a02324c
+cp %{_builddir}/elisa-22.04.0/autotests/data/music/cover.jpg.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-22.04.0/autotests/data/music/test.m4a.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-22.04.0/autotests/data/music/test.mp3.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-22.04.0/autotests/data/music/test.ogg.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-22.04.0/doc/index.docbook.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-22.04.0/src/elisa_core.kcfg.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
+cp %{_builddir}/elisa-22.04.0/src/elisa_settings.kcfgc.license %{buildroot}/usr/share/package-licenses/elisa/6abf17d8d0933bb54aadf315aafae46eba0d41dd
 pushd clr-build
 %make_install
 popd
@@ -162,6 +162,7 @@ popd
 %files data
 %defattr(-,root,root,-)
 /usr/share/applications/org.kde.elisa.desktop
+/usr/share/dbus-1/services/org.kde.elisa.service
 /usr/share/icons/hicolor/128x128/apps/elisa.png
 /usr/share/icons/hicolor/16x16/apps/elisa.png
 /usr/share/icons/hicolor/22x22/apps/elisa.png
