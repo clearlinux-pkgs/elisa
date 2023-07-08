@@ -6,11 +6,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : elisa
-Version  : 23.04.2
-Release  : 32
-URL      : https://download.kde.org/stable/release-service/23.04.2/src/elisa-23.04.2.tar.xz
-Source0  : https://download.kde.org/stable/release-service/23.04.2/src/elisa-23.04.2.tar.xz
-Source1  : https://download.kde.org/stable/release-service/23.04.2/src/elisa-23.04.2.tar.xz.sig
+Version  : 23.04.3
+Release  : 33
+URL      : https://download.kde.org/stable/release-service/23.04.3/src/elisa-23.04.3.tar.xz
+Source0  : https://download.kde.org/stable/release-service/23.04.3/src/elisa-23.04.3.tar.xz
+Source1  : https://download.kde.org/stable/release-service/23.04.3/src/elisa-23.04.3.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause CC0-1.0 GPL-3.0 LGPL-2.1 LGPL-3.0 MIT
@@ -100,15 +100,15 @@ locales components for the elisa package.
 
 
 %prep
-%setup -q -n elisa-23.04.2
-cd %{_builddir}/elisa-23.04.2
+%setup -q -n elisa-23.04.3
+cd %{_builddir}/elisa-23.04.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686517425
+export SOURCE_DATE_EPOCH=1688852237
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -141,7 +141,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1686517425
+export SOURCE_DATE_EPOCH=1688852237
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/elisa
 cp %{_builddir}/elisa-%{version}/CMakePresets.json.license %{buildroot}/usr/share/package-licenses/elisa/29fb05b49e12a380545499938c4879440bd8851e || :
