@@ -6,11 +6,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : elisa
-Version  : 23.04.3
-Release  : 33
-URL      : https://download.kde.org/stable/release-service/23.04.3/src/elisa-23.04.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/23.04.3/src/elisa-23.04.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/23.04.3/src/elisa-23.04.3.tar.xz.sig
+Version  : 23.08.0
+Release  : 34
+URL      : https://download.kde.org/stable/release-service/23.08.0/src/elisa-23.08.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/23.08.0/src/elisa-23.08.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/23.08.0/src/elisa-23.08.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause CC0-1.0 GPL-3.0 LGPL-2.1 LGPL-3.0 MIT
@@ -19,22 +19,11 @@ Requires: elisa-data = %{version}-%{release}
 Requires: elisa-lib = %{version}-%{release}
 Requires: elisa-license = %{version}-%{release}
 Requires: elisa-locales = %{version}-%{release}
-BuildRequires : baloo-dev
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : extra-cmake-modules-data
-BuildRequires : kconfig-dev
-BuildRequires : kconfigwidgets-dev
-BuildRequires : kcoreaddons-dev
-BuildRequires : kcrash-dev
-BuildRequires : kdbusaddons-dev
-BuildRequires : kdoctools-dev
 BuildRequires : kfilemetadata-dev
-BuildRequires : ki18n-dev
-BuildRequires : kiconthemes-dev
-BuildRequires : kio-dev
 BuildRequires : kirigami2-dev
-BuildRequires : kxmlgui-dev
 BuildRequires : pkg-config
 BuildRequires : pkgconfig(libvlc)
 # Suppress stripping binaries
@@ -100,15 +89,15 @@ locales components for the elisa package.
 
 
 %prep
-%setup -q -n elisa-23.04.3
-cd %{_builddir}/elisa-23.04.3
+%setup -q -n elisa-23.08.0
+cd %{_builddir}/elisa-23.08.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688852237
+export SOURCE_DATE_EPOCH=1693248518
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -141,7 +130,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1688852237
+export SOURCE_DATE_EPOCH=1693248518
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/elisa
 cp %{_builddir}/elisa-%{version}/CMakePresets.json.license %{buildroot}/usr/share/package-licenses/elisa/29fb05b49e12a380545499938c4879440bd8851e || :
@@ -214,6 +203,8 @@ popd
 /usr/share/doc/HTML/nl/elisa/index.docbook
 /usr/share/doc/HTML/pt_BR/elisa/index.cache.bz2
 /usr/share/doc/HTML/pt_BR/elisa/index.docbook
+/usr/share/doc/HTML/ru/elisa/index.cache.bz2
+/usr/share/doc/HTML/ru/elisa/index.docbook
 /usr/share/doc/HTML/sv/elisa/index.cache.bz2
 /usr/share/doc/HTML/sv/elisa/index.docbook
 /usr/share/doc/HTML/tr/elisa/Screenshot_20180912_232200.png
